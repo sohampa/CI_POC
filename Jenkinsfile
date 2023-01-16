@@ -12,7 +12,7 @@ pipeline {
                 git 'https://github.com/sohampa/CI_POC.git'
             }
         }
-    }
+    
     
     stage ('Compile Stage'){
         steps{
@@ -20,4 +20,6 @@ pipeline {
                 sh 'mvn clean compile'
             }
         }
+        
+    }     
 }
