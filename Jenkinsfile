@@ -10,12 +10,12 @@ pipeline {
     stages {
         
         
-        stage('Checkout') {
-            steps {
-                // Get some code from a GitHub repository
-                git 'https://github.com/sohampa/CI_POC.git'
-            }
-        }
+//         stage('Checkout') {
+//             steps {
+//                 // Get some code from a GitHub repository
+//                 git 'https://github.com/sohampa/CI_POC.git'
+//             }
+//         }
         
         stage('Initialize'){
             steps{
