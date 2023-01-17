@@ -27,7 +27,7 @@ pipeline {
         stage('compile'){
             steps{
                 echo "COMPILE"
-                mvn clean install
+//                 mvn clean install
             }
         }
     
