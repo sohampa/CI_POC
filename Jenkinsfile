@@ -19,7 +19,7 @@ pipeline {
     
     stage ('Compile Stage'){
         steps{
-            echo ${mvn -version}
+            echo mvn -version
             
         }
         
