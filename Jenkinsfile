@@ -23,6 +23,13 @@ pipeline {
                 echo "M2_HOME = /opt/maven"
             }
         }
+        
+        stage('compile'){
+            steps{
+                echo "COMPILE"
+                mvn clean install
+            }
+        }
     
    
     }
