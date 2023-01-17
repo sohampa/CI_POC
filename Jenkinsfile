@@ -10,7 +10,7 @@ pipeline {
     stages {
         
         
-        stage('Build') {
+        stage('Checkout') {
             steps {
                 // Get some code from a GitHub repository
                 git 'https://github.com/sohampa/CI_POC.git'
@@ -24,10 +24,10 @@ pipeline {
             }
         }
         
-        stage('compile'){
+        stage('Compile'){
             steps{
                 echo "COMPILE"
-//                 mvn clean install
+             bat "mvn -Dmaven.test.failure.ignore=true clean package"
             }
         }
     
