@@ -1,7 +1,8 @@
 pipeline {
     agent any
     tools {
-        maven 'maven-3.8.6' 
+        maven "Maven"
+        jdk "Jdk"
     }
 
     
@@ -15,14 +16,14 @@ pipeline {
                 git 'https://github.com/sohampa/CI_POC.git'
             }
         }
-    
-    
-    stage ('Compile Stage'){
-        steps{
-            echo mvn -version
-            
-        }
         
-    }   
+        stage('Initialize'){
+            steps{
+                echo "PATH = ${M2_HOME}/bin:${PATH}"
+                echo "M2_HOME = /opt/maven"
+            }
+        }
+    
+   
     }
 }
