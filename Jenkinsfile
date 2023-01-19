@@ -24,10 +24,17 @@ pipeline {
             }
         }
         
+//         stage('Compile'){
+//             steps{
+//                 echo "COMPILE"
+//              bat "mvn -Dmaven.test.failure.ignore=true clean package"
+//             }
+//         }
+        
         stage('Compile'){
             steps{
                 echo "COMPILE"
-             bat "mvn -Dmaven.test.failure.ignore=true clean package"
+             bat "mvn install"
             }
         }
     
