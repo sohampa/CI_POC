@@ -38,13 +38,12 @@ pipeline {
             }
         }
         
-        stage ('Upload') {
+        stage('Sonar Analysis') {
             steps {
-                rtUpload (
-                    // Obtain an Artifactory server instance, defined in Jenkins --> Manage Jenkins --> Configure System:
-                    serverId: artifactory,
-                    specPath: 'http://localhost:8082/artifactory/CI_POC/'
-                )
+                // use the SonarQube Scanner to analyze the project
+                withSonarQubeEnv('SONAR-SCANNER') {
+                    bat 'mvn sonar:sonar'
+                }
             }
         }
     
