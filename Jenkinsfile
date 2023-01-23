@@ -31,12 +31,7 @@ pipeline {
             }
         }
         
-//         stage('Compile'){
-//             steps{
-//                 echo "COMPILE"
-//              bat "mvn clean install"
-//             }
-//         }
+        
         
         stage('Sonar Analysis') {
             steps {
@@ -44,6 +39,14 @@ pipeline {
                 withSonarQubeEnv('SONAR-SCANNER') {
                     bat 'mvn sonar:sonar'
                 }
+            }
+        }
+        
+        
+        stage('Compile'){
+            steps{
+                echo "COMPILE"
+             bat "mvn clean install"
             }
         }
 //         stage('Show Report') {
