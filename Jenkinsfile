@@ -34,7 +34,7 @@ pipeline {
         stage('Compile'){
             steps{
                 echo "COMPILE"
-             bat "mvn install"
+             bat "mvn clean install"
             }
         }
     
