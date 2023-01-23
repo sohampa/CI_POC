@@ -37,24 +37,6 @@ pipeline {
              bat "mvn install"
             }
         }
-        
-        stage('Deploy') {
-            steps {
-                withCredentials([usernamePassword(usernameVariable: 'admin', passwordVariable: 'password')]) {
-                    def server = Artifactory.server 'artifactory'
-                    def uploadSpec = """{
-                    "files": [
-                    {
-                    "pattern": "http://localhost:8082/artifactory/",
-                    "target": "CI_POC/"
-                    }
-                    ]
-                    }"""
-                    server.upload(uploadSpec)
-                    
-}
-}
-}
     
    
     }
