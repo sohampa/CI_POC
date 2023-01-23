@@ -38,14 +38,14 @@ pipeline {
 //             }
 //         }
         
-//         stage('Sonar Analysis') {
-//             steps {
-//                 // use the SonarQube Scanner to analyze the project
-//                 withSonarQubeEnv('SONAR-SCANNER') {
-//                     bat 'mvn sonar:sonar'
-//                 }
-//             }
-//         }
+        stage('Sonar Analysis') {
+            steps {
+                // use the SonarQube Scanner to analyze the project
+                withSonarQubeEnv('SONAR-SCANNER') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
 //         stage('Show Report') {
 //             steps {
 //                 // use the SonarQube plugin to display the report on the Jenkins dashboard
