@@ -24,28 +24,28 @@ pipeline {
             }
         }
         
+        stage('test'){
+            steps{
+                echo "Test"
+             bat "mvn test"
+            }
+        }
+        
 //         stage('Compile'){
 //             steps{
 //                 echo "COMPILE"
-//              bat "mvn -Dmaven.test.failure.ignore=true clean package"
+//              bat "mvn clean install"
 //             }
 //         }
         
-        stage('Compile'){
-            steps{
-                echo "COMPILE"
-             bat "mvn clean install"
-            }
-        }
-        
-        stage('Sonar Analysis') {
-            steps {
-                // use the SonarQube Scanner to analyze the project
-                withSonarQubeEnv('SONAR-SCANNER') {
-                    bat 'mvn sonar:sonar'
-                }
-            }
-        }
+//         stage('Sonar Analysis') {
+//             steps {
+//                 // use the SonarQube Scanner to analyze the project
+//                 withSonarQubeEnv('SONAR-SCANNER') {
+//                     bat 'mvn sonar:sonar'
+//                 }
+//             }
+//         }
 //         stage('Show Report') {
 //             steps {
 //                 // use the SonarQube plugin to display the report on the Jenkins dashboard
