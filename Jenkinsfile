@@ -46,6 +46,12 @@ pipeline {
                 }
             }
         }
+        stage('Show Report') {
+            steps {
+                // use the SonarQube plugin to display the report on the Jenkins dashboard
+                sonarqube  server: 'SONAR-SCANNER'
+            }
+        }
     
    
     }
