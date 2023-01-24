@@ -60,8 +60,8 @@ pipeline {
                 def uploadSpec = """{
                   "files": [
                     {
-                      "pattern": "bazinga/.jar",
-                      "target": "target/JacocoExample-0.0.1-SNAPSHOT.jar"
+                      "pattern": "target/*.jar",
+                      "target": "CI_POC/"
                     }
                  ]
                 }"""
