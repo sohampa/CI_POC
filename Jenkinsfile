@@ -24,6 +24,8 @@ pipeline {
             }
         }
         
+       
+        
         stage('test'){
             steps{
                 echo "Test"
@@ -49,12 +51,22 @@ pipeline {
              bat "mvn clean install"
             }
         }
-//         stage('Show Report') {
-//             steps {
-//                 // use the SonarQube plugin to display the report on the Jenkins dashboard
-//                 sonarqube  server: 'SONAR-SCANNER'
-//             }
-//         }
+        
+        stage('Upload_Artifact') {
+            steps {
+               def server = Artifactory.server 'artifactory'
+
+                def uploadSpec = """{
+                  "files": [
+                    {
+                      "pattern": "bazinga/.jar",
+                      "target": "target/JacocoExample-0.0.1-SNAPSHOT.jar"
+                    }
+                 ]
+                }"""
+                server.upload(uploadSpec) 
+            }
+        }
     
    
     }
