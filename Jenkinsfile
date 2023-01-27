@@ -52,23 +52,23 @@ pipeline {
             }
         }
         
-        stage('Upload_Artifact') {
-            steps {
-                script{
-               def server = Artifactory.server 'artifactory'
+//         stage('Upload_Artifact') {
+//             steps {
+//                 script{
+//                def server = Artifactory.server 'artifactory'
 
-                def uploadSpec = """{
-                  "files": [
-                    {
-                      "pattern": "target/*.jar",
-                      "target": "CI_POC/"
-                    }
-                 ]
-                }"""
-                server.upload(uploadSpec) 
-            }
-            }
-        }
+//                 def uploadSpec = """{
+//                   "files": [
+//                     {
+//                       "pattern": "target/*.jar",
+//                       "target": "CI_POC/"
+//                     }
+//                  ]
+//                 }"""
+//                 server.upload(uploadSpec) 
+//             }
+//             }
+//         }
     
    
     }
