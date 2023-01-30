@@ -19,38 +19,38 @@ pipeline {
         
         stage('Initialize'){
             steps{
-                echo "PATH = ${M2_HOME}/bin:${PATH}"
-                echo "M2_HOME = /opt/maven"
+                
+                echo "Initialize"
             }
         }
         
        
         
-        stage('test'){
-            steps{
-                echo "Test"
-             bat "mvn clean test"
-            }
-        }
+//         stage('test'){
+//             steps{
+//                 echo "Test"
+//              bat "mvn clean test"
+//             }
+//         }
         
         
         
-        stage('Sonar Analysis') {
-            steps {
-                // use the SonarQube Scanner to analyze the project
-                withSonarQubeEnv('SONAR-SCANNER') {
-                    bat 'mvn sonar:sonar'
-                }
-            }
-        }
+//         stage('Sonar Analysis') {
+//             steps {
+//                 // use the SonarQube Scanner to analyze the project
+//                 withSonarQubeEnv('SONAR-SCANNER') {
+//                     bat 'mvn sonar:sonar'
+//                 }
+//             }
+//         }
         
         
-        stage('Compile'){
-            steps{
-                echo "COMPILE"
-             bat "mvn clean install"
-            }
-        }
+//         stage('Compile'){
+//             steps{
+//                 echo "COMPILE"
+//              bat "mvn clean install"
+//             }
+//         }
         
 //         stage('Upload_Artifact') {
 //             steps {
