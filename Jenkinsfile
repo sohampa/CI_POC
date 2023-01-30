@@ -45,12 +45,12 @@ pipeline {
 //         }
         
         
-//         stage('Compile'){
-//             steps{
-//                 echo "COMPILE"
-//              bat "mvn clean install"
-//             }
-//         }
+        stage('Compile'){
+            steps{
+                echo "COMPILE"
+             bat "mvn clean install"
+            }
+        }
         
 //         stage('Upload_Artifact') {
 //             steps {
