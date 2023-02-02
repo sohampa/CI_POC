@@ -1,9 +1,9 @@
 pipeline {
     agent any
-//     tools {
-//         maven "Maven"
-//         jdk "Jdk"
-//     }
+    tools {
+        maven "Maven"
+        jdk "Jdk"
+    }
 
     
 
@@ -29,20 +29,20 @@ pipeline {
         stage('test'){
             steps{
                 echo "Test"
-             sh "mvn clean test"
+                bat "mvn clean test"
             }
         }
         
         
         
-//         stage('Sonar Analysis') {
-//             steps {
-//                 // use the SonarQube Scanner to analyze the project
-//                 withSonarQubeEnv('SONAR-SCANNER') {
-//                     bat 'mvn sonar:sonar'
-//                 }
-//             }
-//         }
+        stage('Sonar Analysis') {
+            steps {
+                // use the SonarQube Scanner to analyze the project
+                withSonarQubeEnv('SONAR-SCANNER') {
+                    bat 'mvn sonar:sonar'
+                }
+            }
+        }
         
         
         stage('Compile'){
