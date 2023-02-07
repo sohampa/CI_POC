@@ -69,12 +69,10 @@ pipeline {
             }
             }
         }
-        post{
-            always {
-                jiraSendBuildInfo site: 'sohamparikjira.atlassian.net', branch: 'CP-13-Integrate-Jira-with-confluence'
-                }
-            }
-    
-   
     }
+    post{
+        always {
+            jiraSendBuildInfo site: 'sohamparikjira.atlassian.net', branch: 'CP-13-Integrate-Jira-with-confluence'
+            }
+        }
 }
