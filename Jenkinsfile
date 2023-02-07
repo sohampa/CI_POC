@@ -1,4 +1,3 @@
-// comment added1
 pipeline {
     agent any
     tools {
@@ -70,7 +69,10 @@ pipeline {
             }
             }
         }
-    
-   
     }
+    post{
+        always {
+            jiraSendBuildInfo site: 'sohamparikjira.atlassian.net', branch: 'CP-13-Integrate-Jira-with-confluence'
+            }
+        }
 }
