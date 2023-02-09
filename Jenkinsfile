@@ -6,7 +6,7 @@ pipeline {
     }
     triggers {
         git {
-            branch '**'
+            branch 'master'
         }
     }
 
