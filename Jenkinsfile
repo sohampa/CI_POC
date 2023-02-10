@@ -5,12 +5,6 @@ pipeline {
         maven "Maven"
         jdk "Jdk"
     }
-    triggers {
-        git {
-            branch 'master'
-        }
-    }
-
     stages {
         
         
