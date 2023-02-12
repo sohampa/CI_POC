@@ -20,7 +20,14 @@ pipeline {
             }
 
         }
-       
+
+        stage('compile'){
+            steps{
+                echo "COMPILE"
+                bat "mvn clean compile"
+            }
+        }
+
         stage('test'){
             steps{
                 echo "Test"
