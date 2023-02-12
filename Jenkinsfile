@@ -12,9 +12,15 @@ pipeline {
                 echo "Initialize"
             }
         }
-        
+
+        stage('validate'){
+            steps{
+                echo "VALIDATE"
+                bat "mvn clean validate"
+            }
+
+        }
        
-        
         stage('test'){
             steps{
                 echo "Test"
@@ -34,9 +40,9 @@ pipeline {
         }
         
         
-        stage('Compile'){
+        stage('Install'){
             steps{
-                echo "COMPILE"
+                echo "INSTALL"
              bat "mvn clean install"
             }
         }
