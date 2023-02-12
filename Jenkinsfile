@@ -45,16 +45,23 @@ pipeline {
                 }
             }
         }
-        
-        
-        stage('Install'){
+
+        stage('package'){
             steps{
-                echo "INSTALL"
+                echo 'Pakage'
+                bat 'mvn clean package'   
+            }
+        }
+
+
+        stage('install'){
+            steps{
+                echo "Install"
              bat "mvn clean install"
             }
         }
         
-        stage('Upload_Artifact') {
+        stage('deploye') {
             steps {
                 script{
                def server = Artifactory.server 'artifactory'
