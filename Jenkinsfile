@@ -1,10 +1,10 @@
 // comment added1
 pipeline {
     agent any
-    tools {
-        // maven "Maven"
-        // jdk "Jdk"
-    }
+    // tools {
+    //     // maven "Maven"
+    //     // jdk "Jdk"
+    // }
 
 //    comment added 
 
